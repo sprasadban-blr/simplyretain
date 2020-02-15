@@ -1,0 +1,11 @@
+#Python projects
+.project
+.pydevproject
+.metadata
+target
+.classpath
+.settings
+.factorypath
+__pycache__
+employeedatabase
+.vscode

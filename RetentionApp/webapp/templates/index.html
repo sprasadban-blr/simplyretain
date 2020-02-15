@@ -1,0 +1,26 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>
+        SimplyRetain - Login
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet" />
+    <link type="text/css" rel="stylesheet" href="../static/css/index.css" />
+</head>
+
+<body>
+    <div class="body-image"></div>
+    <div class="body-content">
+        <h1>Hello User,</h1>
+        <h3>Welcome to <b>SimplyRetain</b>! Please login with your personal account information</h3>
+        <form class="login-form" action="" method="post" role="form">
+	    	{{ form.csrf }}
+            <input type="text" class="form-control" placeholder="Username" id="username" name="username" />
+            <input type="password" class="form-control" placeholder="Password" id="password" name="password" />
+            <input type="submit" value="LOGIN" />
+        </form>
+    </div>
+</body>
+
+</html>

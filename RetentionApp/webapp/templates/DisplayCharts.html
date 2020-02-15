@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Decision Tree</title>
+	<style>
+		table {
+		  font-family: arial, sans-serif;
+		  border-collapse: collapse;
+		  width: 100%;
+		}
+		
+		td, th {
+		  border: 1px solid #dddddd;
+		  text-align: left;
+		  padding: 8px;
+		}
+	</style>	
+</head>
+<body bgcolor="#FFFAFA">
+<!-- 
+	<div style="padding: 0 10%;">
+		<h3 style="margin: 20px 0 0 0;">Employee Charts</h3>
+		<img width="400" height="400" alt="Employee Retention Decision Tree Chart" src="{{decision_tree}}">  
+	</div>
+	<svg width="300px" height="300px" xmlns="http://www.w3.org/2000/svg">
+    	<text x="10" y="50" font-size="30">{{decision_tree}}</text>
+  	</svg>
+	<object type="image/svg+xml" data="{{decision_tree}}"></object>  	
+ -->
+ 	<table>
+	 	<tr>
+	 		<td style='border','1px solid black'>
+	 			{{div_placeholder}}
+	 		</td>
+	 	</tr>
+	 	<tr>
+	 		<td style='border','1px solid black'>
+				<img src="{{decision_tree3}}"/>
+	 		</td>
+	 	</tr>
+	 	<tr>
+ 			<th>Employee: {{employeeId}}</th>
+		 	<tr>
+		 		<td style='border','1px solid black'>
+					<img src="{{decision_tree4}}"/>
+		 		</td>
+	 		</tr>
+	 		<!-- 
+		 	<tr>
+		 		<td style='border','1px solid black'>
+		 			<img src="{{employeePlot}}"/>
+		 		</td>
+		 	</tr>
+		 	 -->
+	 	</tr>
+ 	</table>
+</body>
+</html>

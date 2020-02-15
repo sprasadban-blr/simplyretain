@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--
+	http://codetheory.in/parse-read-excel-files-xls-xlsx-javascript/  
+	https://github.com/SheetJS/js-xlsx/blob/master/index.html  
+-->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Get Selected File Name</title>
+	<style>
+		progress{width:300px;height:30px}
+	</style>
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<!-- <script src="jquery-1.12.4.min.js"></script> -->
+	<script type="text/javascript">
+	    $(document).ready(function(){
+	        $('input[type="file"]').change(function(e){
+	        	if(e.target.files[0] && e.target.files[0].name){
+	                var fileName = e.target.files[0].name;
+	                console.log('The file "' + fileName +  '" has been selected.');
+	                console.log(document.getElementById('fileDialog').value)
+	                var pos = fileName.lastIndexOf(".");
+	                var ext = "csv";
+	                if(pos > -1) {
+	                	ext = fileName.substring(pos).toLowerCase();
+	                }
+					var file = e.target.files[0];                 
+	                if(ext === "xls" || ext === "xlsx") {
+	                	
+	                }
+	                var processed = 1;
+					var reader = new FileReader();
+				   	// here we tell the reader what to do when it's done reading...
+				  	reader.onload = function(readerEvent) {
+				   		console.log("onload");
+			  			//Another way of knowing file upload is done and getting its content				   		
+				  		if (readerEvent.target.readyState == FileReader.DONE) {
+					  		//var content = readerEvent.target.result; // this is the content!
+					  		//document.getElementById("myTextarea").value	= content;
+				  		}
+				   	};
+				   	reader.onloadstart = function(readerEvent){
+				   		console.log("onloadstart");				   		
+				  		document.getElementById("status").innerHTML = "Upload started...";
+				  		//Busy indicator
+				  		$("body").css("cursor", "progress");
+				   	}
+				   	reader.onloadend = function(readerEvent){
+				   		console.log("onloadend");				   						   		
+				  		document.getElementById("status").innerHTML = "Upload finished.";
+				  		document.getElementById("progressBar").value = 100; 
+				  		var content = readerEvent.target.result; // this is the content!
+				  		document.getElementById("myTextarea").value	= content;
+				  		//Normal indicator
+				  		$("body").css("cursor", "default");
+				   	}
+				   	reader.onprogress = function(readerEvent){
+				   		console.log("onprogress");				   						   		
+				   		if(readerEvent.lengthComputable){
+  							var percent = parseInt( ((readerEvent.loaded / readerEvent.total) * 100), 10);
+  							console.log(percent);
+  			 	  			document.getElementById("loaded_n_total").innerHTML = "Uploaded " + readerEvent.loaded  + " bytes of " + readerEvent.total;
+  				  			document.getElementById("status").innerHTML = Math.round(percent) + "% uploaded... please wait";
+  				  			document.getElementById("progressBar").value = percent;
+				   		}
+				   	}
+				   	reader.onerror = function(readerEvent){
+				   		document.getElementById("status").innerHTML = "Upload Failed";			   		
+				   	};
+				   	reader.onabort= function(readerEvent){
+				   		document.getElementById("status").innerHTML = "Upload Aborted";
+				   	};
+					// Getting a hold of the file reference
+				   	reader.readAsText(file,'UTF-8');
+	        	}
+	        });
+	    });
+	    
+	    function clear(){
+	    	document.getElementById("myTextarea").value = "";
+	    	document.getElementById("status").value = "";
+	    	document.getElementById("loaded_n_total").value = "";
+	    	document.getElementById("progressBar").value = 0;
+	    }
+	</script>
+</head>
+<body>
+    <form>
+        <input type="file" id="fileDialog" accept=".csv"><br>
+        <div id="progressInd">
+			<progress id="progressBar" value="0" max="100" style="width:300px;"></progress><br>
+			<textarea rows="10" cols="100" id="myTextarea"></textarea><br>
+	  		<h3 id="status"></h3><br>
+	  		<p id="loaded_n_total"></p><br>        
+        </div>
+		<button onclick="clear()">clear</button>
+    </form>
+</body>
+</html>

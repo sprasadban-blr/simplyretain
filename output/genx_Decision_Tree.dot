@@ -1,0 +1,29 @@
+digraph Tree {
+node [shape=box, style="filled, rounded", color="black", fontname=helvetica] ;
+edge [fontname=helvetica] ;
+0 [label="node #0\nGender_Female <= 1.0\nsamples = 6344\nvalue = [3172, 3172]\nclass = No", fillcolor="#e5813900"] ;
+1 [label="node #1\nGender_Male <= 0.999\nsamples = 3317\nvalue = [2174, 1143]\nclass = No", fillcolor="#e5813979"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+5 [label="node #5\nsamples = 485\nvalue = [485, 0]\nclass = No", fillcolor="#e58139ff"] ;
+1 -> 5 ;
+6 [label="node #6\nPerformanceRating <= 3.999\nsamples = 2832\nvalue = [1689, 1143]\nclass = No", fillcolor="#e5813952"] ;
+1 -> 6 ;
+7 [label="node #7\nPerformanceRating <= 3.002\nsamples = 1018\nvalue = [724, 294]\nclass = No", fillcolor="#e5813997"] ;
+6 -> 7 ;
+11 [label="node #11\nsamples = 848\nvalue = [554, 294]\nclass = No", fillcolor="#e5813978"] ;
+7 -> 11 ;
+12 [label="node #12\nsamples = 170\nvalue = [170, 0]\nclass = No", fillcolor="#e58139ff"] ;
+7 -> 12 ;
+8 [label="node #8\nsamples = 1814\nvalue = [965, 849]\nclass = No", fillcolor="#e581391f"] ;
+6 -> 8 ;
+2 [label="node #2\nMaritalStatus_Married <= 0.997\nsamples = 3027\nvalue = [998, 2029]\nclass = Yes", fillcolor="#399de582"] ;
+0 -> 2 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+3 [label="node #3\nMaritalStatus_Married <= 0.005\nsamples = 759\nvalue = [455, 304]\nclass = No", fillcolor="#e5813955"] ;
+2 -> 3 ;
+9 [label="node #9\nsamples = 664\nvalue = [360, 304]\nclass = No", fillcolor="#e5813928"] ;
+3 -> 9 ;
+10 [label="node #10\nsamples = 95\nvalue = [95, 0]\nclass = No", fillcolor="#e58139ff"] ;
+3 -> 10 ;
+4 [label="node #4\nsamples = 2268\nvalue = [543, 1725]\nclass = Yes", fillcolor="#399de5af"] ;
+2 -> 4 ;
+}

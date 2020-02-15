@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Get Selected File Name</title>
+	<style>
+		progress{width:300px;height:30px}
+	</style>
+	<style>
+		table {
+		  font-family: arial, sans-serif;
+		  border-collapse: collapse;
+		  width: 100%;
+		}
+		
+		td, th {
+		  border: 1px solid #dddddd;
+		  text-align: left;
+		  padding: 8px;
+		}
+		
+		tr:nth-child(even) {
+		  background-color: #dddddd;
+		}
+	</style>	
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<!-- <script src="jquery-1.12.4.min.js"></script> -->
+	<script type="text/javascript">
+		ready = false;
+        processed = 1;
+	    $(document).ready(function(){
+	        $('input[type="file"]').change(function(e){
+		  		//$("body").css("cursor", "wait");
+		  		$("body").style="cursor:wait";
+		  		//document.body.style.cursor = 'wait';
+	        	if(e.target.files[0] && e.target.files[0].name){
+	                var fileName = e.target.files[0].name;
+	                console.log('The file "' + fileName +  '" has been selected.');
+	                console.log(document.getElementById('fileDialog').value)
+	                
+					var file = e.target.files[0];                 
+					var reader = new FileReader();
+				   	reader.onloadstart = function(readerEvent){
+				   		console.log("onloadstart");				   		
+				  		document.getElementById("status").innerHTML = "Upload started...";
+				  		//Busy indicator
+				  		//$("body").css("cursor", "wait");
+				  		//document.body.style.cursor = 'wait';
+						$("body").style="cursor:wait";
+				  		waitForFileLoad();
+				   	}
+				   	reader.onloadend = function(readerEvent) {
+				   		console.log("onloadend");				   						   		
+				  		document.getElementById("status").innerHTML = "Upload finished.";
+				  		document.getElementById("progressBar").value = 100; 
+				  		var content = readerEvent.target.result; // this is the content!
+				  		document.getElementById("myTextarea").value	= content;
+				  		var table = $("<table />").css('width','100%');
+	                     
+	                    var rows = content.split("\n");
+	                    var displayLen = 101;
+	                    if(rows.length < displayLen){
+	                    	displayLen = rows.length;
+	                    }
+	                    for (var i = 0; i < displayLen; i++) {
+	                        var row = $("<tr  />");
+	                        var cells = rows[i].split(",");
+	                        for (var j = 0; j < cells.length; j++) {
+	                        	var cell;
+	                        	if(i == 0) {
+	                        		cell = $("<th />");
+	                        	}else{
+		                            cell = $("<td />");
+	                        	}
+	                            cell.html(cells[j]);
+	                            row.append(cell);
+	                        }
+	                        table.append(row);
+	                    }
+	                    $("#dvCSV").html('');
+	                    $("#dvCSV").append(table);
+				  		//Normal indicator
+				  		//$("body").css("cursor", "default");
+				  		//document.body.style.cursor = 'default';
+		  				$("body").style="cursor:default";				  		
+				  		ready = true;
+				   	}
+				   	
+					// Getting a hold of the file reference
+				   	reader.readAsText(file,'UTF-8');
+	        	}
+	        });
+	    });
+	    
+	    var waitForFileLoad = function() {
+	        if (ready === true) {
+	             // do what you want with the result variable
+	             return;
+	        }
+  			document.getElementById("progressBar").value = document.getElementById("progressBar").value + (processed + 13);
+  			document.getElementById("status").innerHTML = document.getElementById("progressBar").value + "% uploaded... please wait";
+	        setTimeout(waitForFileLoad, 1000)
+	    }
+	    
+	    function clear(){
+	    	document.getElementById("myTextarea").value = "";
+	    	document.getElementById("status").value = "";
+	    	document.getElementById("loaded_n_total").value = "";
+	    	document.getElementById("progressBar").value = 0;
+	    }
+	</script>
+</head>
+<body bgcolor="#FFFAFA">
+    <div class="body-image"></div>
+	<div class="body-content">
+		<p>Your uploaded csv file will be shown to you in a preview  for Confirmation</p>
+	    <form class="login-form" action="" method="post" role="form">
+        	<input class="form-control" type="file" id="fileDialog" accept=".csv"><br>
+			<progress class="form-control" id="progressBar" value="0" max="100" style="width:300px;"></progress><br>
+			<textarea class="form-control" rows="10" cols="100" id="myTextarea" name="myTextarea" style="display: none;"></textarea><br>
+			<h4>Confirm file to be uploaded and Click the Proceed Button Below</h4>
+			<div id="dvCSV"></div>
+	  		<h3 class="form-control" id="status"></h3><br>
+	  		<p class="form-control" id="loaded_n_total"></p><br>
+	  		<!-- <button class="button" onclick="clear()">clear</button> -->
+	  		<!-- <input type="button" onclick="clear()" value="clear" />  -->
+        	<input type="submit" value="Proceed!" />		
+	    </form>
+	</div>
+</body>
+</html>

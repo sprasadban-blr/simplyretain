@@ -1,0 +1,12 @@
+# Set the parameters
+
+## Ignore column if more than ignore_thres fraction of data is empty
+ignore_thres_col=0.7
+ignore_thres_row=0.5
+categorical_thres=10
+
+
+# Default values of parameters
+ignore_thres_col=0.3
+ignore_thres_row=0.4
+categorical_thres=10

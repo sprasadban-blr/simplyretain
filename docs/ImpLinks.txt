@@ -1,0 +1,26 @@
+1. All links about SNA: https://github.com/briatte/awesome-network-analysis
+2. SNA using python: https://www.youtube.com/watch?v=qgGqaBAEy3Q
+3. SNA GitHub: 
+    https://github.com/maksim2042 
+    https://github.com/maksim2042/PyCon2012 
+4: SNA at LinkedIn: https://www.slideshare.net/mitultiwari/social-network-analysis-at-linkedin 
+5. People Analytics Vs HR Analytics: 
+    https://www.analyticsinhr.com/blog/difference-between-people-analytics-and-hr-analytics/
+    https://www.xperthr.com/people-analytics/2017/07/27/people-analytics-vs-hr-analytics/
+6. LinkedIn API
+    https://www.quora.com/What-Linkedin-data-can-be-pulled-from-their-API
+    https://developer.linkedin.com/docs/rest-api
+    https://www.linkedin.com/developers/ 
+    https://docs.microsoft.com/en-us/linkedin/talent/recruiter-system-connect 
+    https://docs.microsoft.com/en-us/linkedin/shared/authentication/authentication?context=linkedin/consumer/context 
+    Paid Software: https://linkedinscraping.com/?gclid=CjwKCAiAiJPkBRAuEiwAEDXZZcD7niXl3JTXzJID9SXJLp4tjQ7opL9mZt9DeJLxVyZH16f_0M7oERoCnXEQAvD_BwE 
+    Stackoverflow Query to get all linkedin profile details: https://stackoverflow.com/questions/8593144/how-to-retrieve-all-possible-information-about-a-linkedin-account-api-using-c  
+7. Python LinkedIn Library
+    https://pypi.org/project/linkedin-api/ 
+    https://github.com/tomquirk/linkedin-api/blob/master/DOCS.md 
+8. Awesome Python
+    https://github.com/vinta/awesome-python
+9. Bipartite graphs
+    https://networkx.github.io/documentation/networkx-1.10/reference/algorithms.bipartite.html 
+10. Nxviz sample charts
+    https://www.google.co.in/search?rlz=1C1GCEB_enSG836SG836&tbm=isch&q=nxviz+samples&backchip=online_chips:circosplot&chips=q:nxviz+samples&usg=AI4_-kS_A7-iKIFoF4H8-04ON9Fu989AQQ&sa=X&ved=0ahUKEwiygJDc0ffgAhU_4nMBHXOCAJ8Q3VYIKCgA&biw=1280&bih=578&dpr=1.5 

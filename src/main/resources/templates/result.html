@@ -1,0 +1,49 @@
+<html>
+
+<head>
+<title>Employee Database - Home</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300"
+	rel="stylesheet" />
+<link type="text/css" rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid.min.css" />
+<link type="text/css" rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid-theme.min.css" />
+<link type="text/css" rel="stylesheet" href="../../css/result.css" />
+</head>
+
+<body>
+	<div class="header">
+		<p onclick="#">SimplyRetain</p>
+<!-- 		<p onclick="#" -->
+<!-- 			style="float: right; font-size: 12px; border-left: 1px solid #9a9a9a; padding-left: 40px;">+ -->
+<!-- 			Add</p> -->
+	</div>
+	<div style="padding: 0 10%;">
+		<h3 style="margin: 20px 0 0 0;">Employee Charts</h3>
+		<div class="content">
+<!-- 			<canvas id="dougnutChart" width="400" height="400"></canvas> -->
+				<BR/>
+<!-- 			<canvas id="barChart" width="400" height="400"></canvas> -->
+		</div>
+		<img width="400" height="400" th:src="${image_1}"/>
+		<img width="400" height="400" th:src="${image_2}"/>
+		<img width="400" height="400" src="../../css/millenial.png"/>
+		<img width="400" height="400" th:src="${tree_imag}"/>
+	</div>
+	<div style="padding: 0 10%;">
+	<span id="retain" style="display:none" th:text="${data}"/>
+		<h3 style="margin: 15px 0 0 0;">Recommendations</h3>
+		<div id="grid"></div>
+		<h3 style="margin: 15px 0 0 0;">Similar Employees</h3>
+		<div id="similar_grid"></div>
+	</div>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid.min.js"></script>
+	<script type="text/javascript" src="../../css/result.js"></script>
+</body>
+
+</html>

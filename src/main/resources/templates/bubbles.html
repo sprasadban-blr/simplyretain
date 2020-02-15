@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <title>
+        Employee Attrition Prediction
+    </title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet" />
+    <link type="text/css" rel="stylesheet" href="../../css/bubbles.css" />
+</head>
+
+<body>
+    <div class="header">
+        <p onclick="#">SimplyRetain</p>
+    </div>
+    <div class="content">
+        <div id="left" class="left"></div>
+        <div class="right">
+            <h3>Employee Characteristics</h3>
+            <form id="form" class="login-form" th:action="@{/postchar}" th:object="${character}" method="POST" enctype="multipart/form-data">
+                <input id ="gender" style="display:none" type="text" placeholder="Gender" th:field="*{gender}"/>
+                <select id ="age_category" style="display:none" th:field="*{age_category}">
+    				<option th:value="'Millennial'" th:text="Millennial"></option>
+    				<option th:value="'Genx'" th:text="Genx"></option>
+    				<option th:value="'BabyBoomers'" th:text="BabyBoomers"></option>
+					</select>
+<!--                 <input id ="age_category" style="display:none" type="text" placeholder="Age Category" th:field="*{age_category}"/> -->
+                <input id ="marital" style="display:none" type="text" placeholder="Martial Status" th:field="*{marital}"/>
+                <input id ="monthlyIncome" style="display:none" type="text" placeholder="Monthly Income" th:field="*{monthlyIncome}"/>
+                <input id ="salaryHike" style="display:none" type="text" placeholder="Salary Hike" th:field="*{salaryHike}"/>
+                <input id ="perf_rating" style="display:none" type="text" placeholder="Perf Rating" th:field="*{perf_rating}"/>
+                <input id ="recognition" style="display:none" type="text" placeholder="Recognition" th:field="*{recognition}"/>
+                <input id="submit" type="submit" value="Get Early Signals" />
+            </form>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="../../css/bubbles.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+Link: https://www.youtube.com/watch?v=89mxOdwPfxA 
+1. Degree Distribution
+2. Power Law Distribution
+3. Total Possible edges = (n*(n-1))/2 
+4. Density = #Edges_Exists/Total Possible edges
+5. Clustering Coeffcient
+6. Centrality Measure
+    i. Closeness Centrality -- Shortest path from one node to another 
+        Avg shortest path = Sum of all nodes shortest path/# of nodes (lower the average is better)
+    ii. Degree Centrality = Degree of each nodes
+    iii. Betweenness Centrality -- Want to measure Betweenness centrality for node 'X'
+        Computer shortest path for every pair of nodes in Graph
+        Sum(What percentage of shortest path between nodes passes through node 'X')
+        To look 'X' is a gate keeper of that network or not ?
+    iv. EigenVector Centrality -- Iterative technique from linear algebra
+        Similar to Google page rank
+7. Connectivity and Cohesion -- Minimum #of nodes to remove that makes seperation of graphs
+8. Small Worlds: High clustering coefficients and Low average shortest path
+    Random Graph Vs Regular Graph 
+    i. Average Shortest Path = log(n) Vs n
+    ii. Low clustering coefficients Vs High clustering coefficients
+    iii. Small Worlds = Regular Graphs (remove few edges and add them back randomly) 
+https://www.youtube.com/watch?v=0DBVDpGJLAA
+9. Snowball Sampling -- Start with one node and keep building it (connections connection and so on..)
+10. Random Sampling -- Randomly choose edges and keep building the network
+11. Egocentric Network
+    https://www.youtube.com/watch?v=ga9zG_VhMOg (Nice Visualization)
+    https://www.youtube.com/watch?v=Lw7oSr07OX0
+12. Modeling Complex Social Networks: Challenges & Opportunities for Statistical Learning & Inference 
+    https://www.youtube.com/watch?v=1xLjYc7EUEU 
+        
