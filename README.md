@@ -44,9 +44,9 @@ Step 5: Run UI application from browser
   * http://localhost:8080/
 
 * Highlights:
-	  1. Techniques to isolate in generic way numerical and categorical features (Feature engineering)
-	  2. Performing statistical analysis to know what are the fields correlated to attrition
-	  3. Each employee where they stand in company corpus (Ex: Income Vs Salary hike, Rating Vs Income)
-	  4. Corpus level decision tree in knowing path for an employee attrition
-	  5. Random employee attrition path based on above decision tree
-	  6. Providing recommendation for an employee to retain based on market research report (This can be automated by doing web crawling and   NLP techniques)
+	  ..1. Techniques to isolate in generic way numerical and categorical features (Feature engineering)
+	  ..2. Performing statistical analysis to know what are the fields correlated to attrition
+	  ..3. Each employee where they stand in company corpus (Ex: Income Vs Salary hike, Rating Vs Income)
+	  ..4. Corpus level decision tree in knowing path for an employee attrition
+	  ..5. Random employee attrition path based on above decision tree
+	  ..6. Providing recommendation for an employee to retain based on market research report (This can be automated by doing web crawling and   NLP techniques)
